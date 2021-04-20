@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'stefan-angular-frontend';
+  isValid = false;
+
+  ngOnInit(): void {
+    let val = localStorage.getItem('isValidUser')
+
+    if(val != null && val == 'true'){
+        this.isValid = true
+    }else{
+      this.isValid = false
+    }
+  }
 }
