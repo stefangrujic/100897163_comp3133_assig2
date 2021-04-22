@@ -16,6 +16,9 @@ exports.resolvers = {
         getUser: async (parent, args) =>{
             return await User.find({});
         },
+        getUserByName: async (parent, args) =>{
+            return await User.find({"username" : args.username});
+        },
         getBooking: async (parent, args) =>{
             return await Booking.find({});
         }

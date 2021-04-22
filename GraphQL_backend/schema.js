@@ -33,7 +33,7 @@ exports.typeDefs = gql `
      getHotelByCity(city: String!): [Hotel]
 
      getUser: [User]
-
+     getUserByName(username: String!): [User]
      getBooking: [Booking]
    }
 

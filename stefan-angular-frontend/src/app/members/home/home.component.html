@@ -1,7 +1,14 @@
 <p>home works!</p>
 
+<div *ngIf="loading">
+  Loading...
+</div>
+<div *ngIf="error">
+  Error Occurred :(
+</div>
+
 <div *ngFor="let item of hotels">
   <p>{{item.hotel_name}}</p>
 </div>
 
-<button (click)="logOut()">Logout</button>
+<button mat-raised-button color="primary" (click)="logOut()">Logout</button>
