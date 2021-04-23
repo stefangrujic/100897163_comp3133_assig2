@@ -6,10 +6,13 @@ import { LoginComponent } from './public/login/login.component';
 import { RegisterComponent } from './public/register/register.component';
 import { BookingsComponent } from './members/bookings/bookings.component';
 import { SearchComponent } from './members/search/search.component';
+import { NewbookingComponent } from './members/newbooking/newbooking.component';
+
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   { path: 'booking', component:BookingsComponent, canActivate: [AuthGuard]},
+  { path: 'newbooking', component:NewbookingComponent, canActivate: [AuthGuard]},
   { path: 'search', component:SearchComponent, canActivate: [AuthGuard]},
   { path: 'login', component:LoginComponent},
   { path: 'register', component:RegisterComponent},

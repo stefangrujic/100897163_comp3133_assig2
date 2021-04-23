@@ -8,6 +8,7 @@ import { LoginComponent } from './public/login/login.component';
 import { RegisterComponent } from './public/register/register.component';
 import { BookingsComponent } from './members/bookings/bookings.component';
 import { SearchComponent } from './members/search/search.component';
+import { NewbookingComponent } from './members/newbooking/newbooking.component';
 
 import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
 import { GraphQLModule } from './graphql.module';
@@ -19,6 +20,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import {MatCardModule} from '@angular/material/card';
     LoginComponent,
     RegisterComponent,
     BookingsComponent,
-    SearchComponent
+    SearchComponent,
+    NewbookingComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import {MatCardModule} from '@angular/material/card';
     MatInputModule,
     MatFormFieldModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -22,10 +22,10 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-  onSubmit(loginForm: NgForm):void{
-    let userName = loginForm.value.username
-    let password = loginForm.value.password
-    let email = loginForm.value.email
+  onSubmit(registerForm: NgForm):void{
+    let userName = registerForm.value.username
+    let password = registerForm.value.password
+    let email = registerForm.value.email
 
     this.userService.addUser(userName,password,email).subscribe(
       ({ data }) => {
@@ -35,7 +35,8 @@ export class RegisterComponent implements OnInit {
         console.log("there was an error sending the query", error);
       }
     );
-    console.log(` Username: ${userName}  Password: ${password} Email: ${email}`)
+
+    this.router.navigateByUrl('/login')
    }
 
 }

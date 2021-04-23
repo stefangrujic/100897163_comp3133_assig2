@@ -19,8 +19,8 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmitName(loginForm: NgForm):void{
-   let hotelName = loginForm.value.searchByName
+  onSubmitName(searchForm: NgForm):void{
+   let hotelName = searchForm.value.searchByName
 
    this.hotelService.getHotelByName(hotelName)
     .subscribe(
@@ -32,8 +32,8 @@ export class SearchComponent implements OnInit {
     );
   }
 
-  onSubmitCity(loginForm: NgForm):void{
-    let hotelCity = loginForm.value.searchByCity
+  onSubmitCity(citySearchForm: NgForm):void{
+    let hotelCity = citySearchForm.value.searchByCity
 
     this.hotelService.getHotelByCity(hotelCity)
      .subscribe(

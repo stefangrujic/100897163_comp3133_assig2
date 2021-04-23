@@ -6,8 +6,6 @@ import gql from "graphql-tag";
   providedIn: 'root'
 })
 
-
-
 export class UserService {
 
   constructor(private apollo: Apollo) { }
