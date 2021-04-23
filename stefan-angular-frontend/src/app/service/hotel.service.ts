@@ -23,7 +23,48 @@ export class HotelService {
         }
       }`
     })
-
     return document;
+  }
+
+  getHotelByName(name:String){
+    let document = this.apollo
+    .query<any>({
+      query: gql`
+        query($hotel_name: String!){
+          getHotelByName(hotel_name: $hotel_name){
+            hotel_name
+            street
+            city
+            postal_code
+            price
+            email
+        }
+      }`,
+      variables: {
+        hotel_name: name
+      }
+    })
+    return document;
+  }
+
+  getHotelByCity(hotelCity:String){
+    let document = this.apollo
+    .query<any>({
+      query: gql`
+        query($city: String!){
+          getHotelByCity(city: $city){
+            hotel_name
+            street
+            city
+            postal_code
+            price
+            email
+        }
+      }`,
+      variables: {
+        city: hotelCity
+        }
+      })
+      return document;
   }
 }

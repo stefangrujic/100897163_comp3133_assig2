@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
         ({ data, loading }) => {
           this.hotels = data.getHotel;
           this.loading = loading;
-          console.log(this.hotels);
         },
         error => {
           this.loading = false;
