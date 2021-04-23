@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ThemePalette} from '@angular/material/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +10,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'stefan-angular-frontend';
   isValid = false;
+
+  background: ThemePalette = 'primary';
 
   ngOnInit(): void {
     let val = localStorage.getItem('isValidUser')

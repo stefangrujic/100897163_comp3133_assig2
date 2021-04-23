@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
+import { HotelService } from '../../service/hotel.service'
+
 
 @Component({
   selector: 'app-home',
@@ -8,9 +10,24 @@ import { Router } from '@angular/router'
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  hotels:any;
+  loading = true;
+  error: any;
+
+  constructor(private router: Router,private hotelService: HotelService) { }
 
   ngOnInit(): void {
+    this.hotelService.getHotels()
+      .subscribe(
+        ({ data, loading }) => {
+          this.hotels = data.getHotel;
+          this.loading = loading;
+        },
+        error => {
+          this.loading = false;
+          this.error = error;
+        }
+      );
   }
 
   logOut(){

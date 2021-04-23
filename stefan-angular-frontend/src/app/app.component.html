@@ -1,7 +1,11 @@
-<ul>
-  <li><a routerLink="/home">Home (SECURE)</a></li>
-  <li> <a routerLink="/login">Login</a></li>
-  <li> <a routerLink="/register">Register</a></li>
-</ul>
+<nav mat-tab-nav-bar [backgroundColor]="background">
+  <a mat-tab-link routerLink="/home" *ngIf="isValid; else isLogout">Home</a>
+  <ng-template #isLogout>
+  <a mat-tab-link routerLink="/login">Login</a>
+  </ng-template>
+  <a mat-tab-link routerLink="/booking">Booking</a>
+  <a mat-tab-link routerLink="/search">Search Hotels</a>
+  <a mat-tab-link routerLink="/register">Register</a>
+</nav>
 
 <router-outlet></router-outlet>
